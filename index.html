@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QuizMaster — Interactive Quiz App</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="dark">
+
+  <div class="app">
+
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark">🧠</span>
+        <span class="brand-name">QuizMaster</span>
+      </div>
+      <button id="themeToggle" class="icon-btn" aria-label="Ganti tema terang/gelap" title="Ganti tema">🌙</button>
+    </header>
+
+    <main class="quiz-shell">
+
+      <!-- ===== KARTU QUIZ ===== -->
+      <section class="quiz-card" id="quizCard">
+
+        <div class="quiz-meta">
+          <span class="category-badge" id="categoryBadge">Kategori</span>
+
+          <div class="timer" id="timerWrap" title="Sisa waktu untuk soal ini">
+            <svg class="timer-ring" viewBox="0 0 44 44">
+              <circle class="timer-ring-bg" cx="22" cy="22" r="19"></circle>
+              <circle class="timer-ring-fg" id="timerRing" cx="22" cy="22" r="19"></circle>
+            </svg>
+            <span class="timer-text" id="timerText">15</span>
+          </div>
+        </div>
+
+        <div class="progress-track" aria-hidden="true">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <p class="progress-label" id="progressLabel">Soal 1/10</p>
+
+        <h2 class="question" id="question">Memuat soal...</h2>
+
+        <div class="options-grid" id="options"></div>
+
+        <button class="btn-next hidden" id="nextBtn">Lanjut →</button>
+      </section>
+
+      <!-- ===== KARTU HASIL ===== -->
+      <section class="result-card hidden" id="result">
+        <div class="result-emoji" id="resultEmoji">🎉</div>
+        <h2 class="result-title" id="resultTitle">Quiz Selesai!</h2>
+        <p class="result-score">Skor kamu: <span id="score">0/0</span></p>
+        <p class="result-highscore">🏆 High score tersimpan: <span id="highScore">0%</span></p>
+        <button class="btn-restart" id="restartBtn">🔄 Ulangi Quiz</button>
+      </section>
+
+    </main>
+
+    <footer class="footnote">
+      Tugas Rutin 6 — Pemrograman Web · DOM Manipulation &amp; Event Handling
+    </footer>
+
+  </div>
+
+<script src="app.js"></script>
+</body>
+</html>
